@@ -1,0 +1,37 @@
+#include <bits/stdc++.h> 
+
+
+int getNumber( vector<int>&arr, int size){
+	
+    int ans =0 ; 
+    int value = 0;
+    int i =0;
+    while( i < size  ){ 
+        ans = arr[i] * pow(10, (size-i)-1);
+        value = value + ans;
+        i++;
+    }
+    return value;
+
+}
+
+int getSum( int a, int b){
+    int c = a + b;
+    return c;
+}
+vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
+	// Write your code here.
+	int valueOne = getNumber(a,n);
+	int valueTwo = getNumber(b,m);
+	int sum = getSum(valueOne,valueTwo);
+
+
+	vector<int>ans ; 
+        while( sum>0){
+            ans.push_back(sum%10);
+			sum=sum/10;
+        }
+	reverse(ans.begin() ,ans.end());
+
+	return ans ; 
+}
