@@ -1,0 +1,33 @@
+#include <bits/stdc++.h> 
+char lowercase(char ch){
+    if((ch>='a'&& ch<='z')||(ch>='0'&& ch<='9')){
+        return ch;
+    }else if(ch>='A'&& ch<='Z'){
+        char temp= ch -'A'+'a';
+        return temp;
+    }else{
+        return '\0';
+    }
+}
+bool checkPalindrome(string s)
+{
+    // Write your code here.
+    int start=0;
+    int end=s.size()-1;
+    while(start<=end){
+        if(lowercase(s[start])=='\0'){
+            start++;
+        } else if(lowercase(s[end])=='\0'){
+            end--;
+        }
+        else if(lowercase(s[start])!=lowercase(s[end])){
+            return 0;
+        }
+        else {
+          
+            start++;
+            end--;
+        }
+    }
+    return 1;
+}
