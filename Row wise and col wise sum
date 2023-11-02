@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+void RowWiseSum(int arr[3][3], int i, int j)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            sum += arr[i][j];
+        }
+        cout << "Sum is " << sum << endl;
+    }
+}
+void ColWiseSum(int arr[3][3], int i, int j)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        int sum = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            sum += arr[i][j];
+        }
+        cout << "Sum is " << sum << endl;
+    }
+}
+int main()
+{
+
+    int arr[3][3] = {{1, 2, 3}, {34, 56, 45}, {33, 0, 7}};
+    cout << "Printing sum row-wise" << endl;
+    RowWiseSum(arr, 3, 3);
+    cout << "Printing sum col-wise" << endl;
+    ColWiseSum(arr, 3, 3);
+    return 0;
+}
