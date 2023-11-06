@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    // Pointers nd their address
+
+    int p = 3;
+    // int *ptr = &p;
+    int *ptr = 0;
+    ptr = &p;
+    cout << ptr << endl;
+    cout << *ptr << endl;
+    cout << p << endl;
+    cout << &p << endl;
+    cout << &ptr << endl;
+
+    // Copying pointer
+    cout << "Copying pointer" << endl;
+
+    int n = 7;
+    int *x = &n;
+    int *y = x;
+
+    cout << n << endl;
+    cout << *x << endl;
+    cout << *y << endl;
+    cout << &x << endl;
+    cout << &y << endl;
+    return 0;
+}
