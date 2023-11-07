@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+
+    int arr[4] = {1, 22, 3, 4};
+
+    cout << "address of first memory block " << arr << endl;
+    cout << "address of first memory block " << &arr << endl;
+    cout << "address of first memory block " << &arr[0] << endl;
+    cout << "1. Value here is " << *arr << endl;
+    cout << "2. Value here is " << *arr + 1 << endl;
+    cout << "3. Value here is " << *(arr + 1) << endl;
+    cout << "4. Value here is " << arr[2] << endl;
+    cout << "4. Value here is " << *(arr + 2) << endl;
+
+    int *ptr = &arr[4];
+
+    cout << "sizeof(*arr) " << sizeof(*arr) << endl;
+    cout << "sizeof(ptr) " << sizeof(ptr) << endl;
+    cout << " sizeof(*ptr)" << sizeof(*ptr) << endl;
+    cout << " sizeof(&ptr)" << sizeof(&ptr) << endl;
+    cout << " sizeof(&arr)" << sizeof(&arr) << endl;
+    cout << "sizeof(arr) " << sizeof(arr) << endl;
+    
+    return 0;
+}
