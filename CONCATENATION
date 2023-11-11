@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+class Solution {
+public:
+    vector<int> getConcatenation(vector<int>& nums) {
+        vector<int> k;
+
+        k.insert(k.end(), nums.begin(), nums.end());
+        k.insert(k.end(), nums.begin(), nums.end());
+         
+         return k;
+    }
+};
+
+int main(){
+Solution s1;
+  vector<int> nums= {1,2,1};
+  vector<int> k= s1.getConcatenation(nums);
+
+
+  for(int num : k){
+    cout<<num<<" ";
+
+  }
+
+  return 0;
+}
