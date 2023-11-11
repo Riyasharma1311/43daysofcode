@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Solution
+{
+public:
+    bool isPalindrome(int x)
+    {
+        // converting integer into a string
+        string str = to_string(x);
+
+        int first = 0;
+        int last = str.length() - 1;
+        while (first < last)
+        {
+            if (str[first] != str[last])
+            {
+                return false;
+            }
+            first++;
+            last--;
+          
+        }
+        return true;
+    }
+}s1;
+
+int main(){
+
+    int x= 121;
+    int y= -121;
+    int z= 0;
+
+    cout<<x<<" is a pallondromic number:\n"<<s1.isPalindrome(x)<<endl;
+    cout<<y<<" is a pallondromic number:\n"<<s1.isPalindrome(y)<<endl;
+    cout<<z<<" is a pallondromic number:\n"<<s1.isPalindrome(z)<<endl;
+
+    return 0;
+}
