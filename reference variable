@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int getSum(int *p, int n)
+{
+
+    int sum = 0;
+    for (int k = 0; k < n; k++)
+    {
+        sum += p[k];
+    }
+    return sum;
+}
+
+// call by reference
+int update1(int &n)
+{
+    n++;
+}
+
+// call by value
+int update(int n)
+{
+    n++;
+}
+
+int main()
+{
+    int i = 5;
+
+    int &j = i;
+    cout << i << endl;
+    i++;
+    cout << i << endl;
+    j++;
+    cout << i << endl;
+    update1(j);
+    cout << i << endl;
+
+    int n;
+    cout << "enter the size of array" << endl;
+    cin >> n;
+
+    int *p = new int[n];
+    for (int k = 0; k < n; k++)
+    {
+        cin >> p[k];
+    }
+
+    int ans = getSum(p, n);
+    cout << "sum is " << ans << endl;
+
+    return 0;
+}
