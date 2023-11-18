@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+
+int firstOccurance(int arr[], int s, int e, int key)
+{
+    int ans = -1;
+    // base case
+    if (s > e)
+    {
+        return ans;
+    }
+
+    int mid = s + (e - s) / 2;
+
+    if (arr[mid] == key)
+    {
+        // ans = mid;
+        firstOccurance(arr, s, mid - 1, key);
+        ans = mid;
+        //  return ans;
+    }
+    else if (arr[mid] < key)
+    {
+        firstOccurance(arr, mid + 1, e, key);
+    }
+    else
+    {
+        firstOccurance(arr, s, mid - 1, key);
+    }
+    // mid = s + (e - s) / 2;
+
+    // return ans;
+}
+
+int lastOccurance(int arr[], int s, int e, int key)
+{
+    int ans = -1;
+    // base case
+    if (s > e)
+    {
+        return ans;
+    }
+
+    int mid = s + (e - s) / 2;
+
+    if (arr[mid] == key)
+    {
+
+        lastOccurance(arr, mid + 1, e, key);
+        ans = mid;
+    }
+    else if (arr[mid] < key)
+    {
+        lastOccurance(arr, mid + 1, e, key);
+    }
+    else
+    {
+        lastOccurance(arr, s, mid - 1, key);
+    }
+
+    // return ans;
+}
+
+int main()
+{
+
+    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+    int size = 7;
+    int key = 1;
+
+    cout << "first occurance is " << firstOccurance(arr, 0, size - 1, key) << endl;
+    cout << "last occurance is " << lastOccurance(arr, 0, size - 1, key) << endl;
+    return 0;
+}
