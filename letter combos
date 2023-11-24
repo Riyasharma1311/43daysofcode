@@ -1,0 +1,33 @@
+#include<string>
+class Solution {
+    vector<string> solve(vector<string>& ans,int index,string digits, string output,string map){
+if(index>digits.length()){
+    ans.push_back(output);
+    return ans;
+}
+
+int value=digits[index]-'0';
+string val = map[value];
+for(int j=0;j<str.length();j++){
+    output.push_back(val[j]);
+solve(ans,index+1,digits,output,map);
+output.pop_back();
+}
+
+    }
+public:
+    vector<string> letterCombinations(string digits) {
+
+     vector<string> ans;
+     int index=0;
+
+     if(digits.length()=0){
+         return ans;
+     }
+     string output="";
+     string map[10]={"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+
+solve(ans,index,digits,output,map);
+return ans;
+    }
+};
