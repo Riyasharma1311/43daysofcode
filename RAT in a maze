@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class solution
+{
+public:
+    }
+
+        vector<string> findPath(vector<vector<int>> &m, int n)
+    {
+
+        vector<string> ans;
+        vector<vector<int>> visited = m;
+        if (m[0 [0] == 0])
+        {
+            return ans;
+        }
+        int srcx = 0;
+        int srcy = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                visited[i][j] = 0;
+            }
+        }
+        string path = " ";
+        solve(ans, m, n, srcx, srcy, visited, path);
+        sort(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+int main()
+{
+    return 0;
+}
