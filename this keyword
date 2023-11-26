@@ -1,0 +1,31 @@
+#include <iostream>
+
+class MyClass
+{
+public:
+    int x;
+
+    // Constructor
+    MyClass(int value)
+    {
+        // Using "this" to differentiate between the member variable and the parameter
+        this->x = value;
+    }
+
+    // Member function to display the value of x
+    void display()
+    {
+        std::cout << "The value of x is: " << this->x << std::endl;
+    }
+};
+
+int main()
+{
+    // Creating an object of MyClass
+    MyClass obj(42);
+
+    // Calling the display function
+    obj.display();
+
+    return 0;
+}
