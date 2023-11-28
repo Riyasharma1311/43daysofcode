@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+class Car
+{
+private:
+    std::string brand; // private attribute
+    std::string model; // private attribute
+
+public:
+    Car(const std::string &brand, const std::string &model) : brand(brand), model(model) {}
+
+    // Public methods for access
+    std::string getBrand() const
+    {
+        return brand;
+    }
+
+    std::string getModel() const
+    {
+        return model;
+    }
+
+    std::string displayInfo() const
+    {
+        return brand + " " + model;
+    }
+};
+
+int main()
+{
+    Car myCar("Toyota", "Camry");
+    std::cout << "Brand: " << myCar.getBrand() << std::endl;
+    std::cout << "Model: " << myCar.getModel() << std::endl;
+    std::cout << "Info: " << myCar.displayInfo() << std::endl;
+
+    return 0;
+}
