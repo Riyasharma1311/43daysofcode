@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+class Example
+{
+private:
+    int privateVar;
+
+public:
+    void setPrivateVar(int value)
+    {
+        privateVar = value;
+    }
+
+    int getPrivateVar() const
+    {
+        return privateVar;
+    }
+};
+
+class Base
+{
+protected:
+    int protectedVar;
+
+public:
+    void setProtectedVar(int value)
+    {
+        protectedVar = value;
+    }
+
+    int getProtectedVar() const
+    {
+        return protectedVar;
+    }
+};
+
+class Derived : public Base
+{
+public:
+    void accessProtectedMember()
+    {
+        protectedVar = 10; // Accessing protected member from the derived class
+    }
+};
+
+class Accessible
+{
+public:
+    int publicVar;
+
+    void setPublicVar(int value)
+    {
+        publicVar = value;
+    }
+
+    int getPublicVar() const
+    {
+        return publicVar;
+    }
+};
